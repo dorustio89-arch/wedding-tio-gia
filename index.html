@@ -301,3 +301,15 @@
   </div>
 </body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const nama = urlParams.get('to');
+        if (nama) {
+            const elemenNama = document.getElementById('guestName');
+            if (elemenNama) {
+                elemenNama.innerText = nama.replace(/\+/g, ' ');
+            }
+        }
+    });
+</script>
