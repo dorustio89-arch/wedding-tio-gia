@@ -210,6 +210,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+function salinTeks(nomor, elemen) {
+    navigator.clipboard.writeText(nomor).then(() => {
+        const teksAwal = elemen.innerText;
+        elemen.innerText = "Berhasil Disalin! ✓";
+        elemen.style.backgroundColor = "#2e7d32"; // Berubah warna hijau saat sukses
+        elemen.style.color = "#ffffff";
+        
+        setTimeout(() => {
+            elemen.innerText = teksAwal;
+            elemen.style.backgroundColor = ""; // Kembali ke warna semula
+            elemen.style.color = "";
+        }, 2000);
+    }).catch(err => {
+        alert("Gagal menyalin teks: ", err);
+    });
+}
 
 
 
