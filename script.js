@@ -198,5 +198,18 @@ function getGuestName() {
 
 // Jalankan fungsi saat halaman web dimuat
 window.addEventListener('DOMContentLoaded', getGuestName);
+// Mengambil parameter 'to' dari URL link
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get('to');
+
+// Jika ada parameter nama di link, ganti tulisan "Bapak/Ibu/Saudara/i" menjadi nama tamu
+if (nama) {
+    const elemenNama = document.getElementById('guestName');
+    if (elemenNama) {
+        // Mengubah tanda "+" menjadi spasi agar rapi
+        elemenNama.innerText = nama.replace(/\+/g, ' '); 
+    }
+}
+
 
 
