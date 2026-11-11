@@ -214,7 +214,7 @@ function salinTeks(nomor, elemen) {
     navigator.clipboard.writeText(nomor).then(() => {
         const teksAwal = elemen.innerText;
         elemen.innerText = "Berhasil Disalin! ✓";
-        elemen.style.backgroundColor = "#2e7d32"; // Berubah warna hijau saat sukses
+        elemen.style.backgroundColor = "#2e7d32"; // Warna tombol berubah hijau saat sukses
         elemen.style.color = "#ffffff";
         
         setTimeout(() => {
@@ -226,6 +226,7 @@ function salinTeks(nomor, elemen) {
         alert("Gagal menyalin teks: ", err);
     });
 }
+
 
 
 
